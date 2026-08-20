@@ -27,6 +27,7 @@ public class Menu {
 
         switch (opcion){
             case 1:
+                mascotaActual.nuevaMascota(scanner);
                 break;
             case 2:
                 mascotaActual.registrarControl(scanner);
