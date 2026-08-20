@@ -6,6 +6,7 @@ public class Menu {
         int opcion;
 
         do{
+        System.out.println();
         System.out.println("1: Crear nueva mascota");
         System.out.println("2: Registrar nuevo control de peso");
         System.out.println("3: Consultar historial de peso");
@@ -15,6 +16,7 @@ public class Menu {
         System.out.println("7: Mostrar peso mayor y menor");
         System.out.println("8: Consultar disponibilidad de controles");
         System.out.println("9: Salir");
+        System.out.println();
         
         System.out.println("¿Qué desea realizar?");
         opcion = scanner.nextInt();
