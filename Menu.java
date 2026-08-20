@@ -22,20 +22,28 @@ public class Menu {
         // 
             case 2:
                 mascotaActual.registrarControl();
+                break;
             case 3:
                 mascotaActual.consultarHistorial();
+                break;
             case 4:
                 mascotaActual.consultarControl();
+                break;
             case 5:
                 mascotaActual.modificarPeso();
+                break;
             case 6:
                 mascotaActual.calcularPromedio();
+                break;
             case 7:
                 mascotaActual.mayorMenor();
+                break;
             case 8:
                 mascotaActual.controlesDisponibles();
+                break;
             case 9:
-                mascotaActual.salir();
+                System.out.println("Regrese pronto");
+                break;
         }
 
     }
