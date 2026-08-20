@@ -14,7 +14,23 @@ public class Mascota {
     }
 
     public void nuevaMascota(){
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Ingrese el nombre: ");
+        nombre = scanner.nextLine();
+
+        System.out.print("Ingrese la especie: ");
+        String especieTexto = scanner.nextLine();
+
+        System.out.print("Ingrese la edad: ");
+        edad = scanner.nextInt();
+
+        especie = Especie.valueOf(especieTexto.toUpperCase());
+
+        controlPeso = new float[10];
+        cantidadPesos = 0;
+
+        System.out.println("Nueva mascota registrada correctamente.");
     }
     public void registrarControl(){
 
