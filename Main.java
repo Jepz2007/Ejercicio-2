@@ -24,8 +24,7 @@ public class Main {
             edad
         );
 
-        // Registrar peso
-        mascotaActual.registrarControl();
+        // Abrir menú
         Menu.menu(mascotaActual);
     }
 }
