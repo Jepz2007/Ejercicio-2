@@ -27,13 +27,52 @@ public class Mascota {
         cantidadPesos++;
     }
     public void consultarHistorial(){
-
+        System.out.println("Historial de consultas: ");
+        
+        if(cantidadPesos == 0){
+            System.out.println("No hay controles registrados.");
+        } else {
+            for(int i = 0; i < cantidadPesos; i++){
+                System.out.println("Consulta " + (i + 1) + ": " + controlPeso[i] + " kg");
+            }
+        }
+            
     }
+
     public void consultarControl(){
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el numero de consulta: ");
+        int consulta = scanner.nextInt();
+
+        if(consulta >= 1 && consulta <= cantidadPesos){
+            System.out.println("Peso: " + controlPeso[consulta - 1] + " kg");
+        } else {
+            System.out.println("La consulta no existe.");
+        }
 
     }
     public void modificarPeso(){
 
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el numero de control: ");
+        int control = scanner.nextInt();
+
+        if(control >= 1 && control <= cantidadPesos){
+            System.out.print("Ingrese el nuevo peso: ");
+            float nuevoPeso = scanner.nextFloat();
+
+            if(nuevoPeso > 0){
+                controlPeso[control - 1] = nuevoPeso;
+                System.out.println("Peso modificado correctamente.");
+            } else {
+                System.out.println("El peso debe ser mayor a 0.");
+            }
+        } else {
+            System.out.println("El control no existe.");
+        }
     }
     public void calcularPromedio(){
 
