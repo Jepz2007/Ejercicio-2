@@ -15,12 +15,35 @@ public class Mascota {
     }
     // Métodos 
 
-    public void nuevaMascota(){
+    public void nuevaMascota(Scanner scanner){
+
+        System.out.println("=== Registrar nueva mascota ===");
+        System.out.println();
+
+        scanner.nextLine();
+
+        System.out.print("Ingrese el nombre: ");
+        nombre = scanner.nextLine();
+
+        System.out.print("Ingrese la especie: ");
+        String especieTexto = scanner.nextLine();
+
+        System.out.print("Ingrese la edad: ");
+        edad = scanner.nextInt();
+
+        especie = Especie.valueOf(especieTexto.toUpperCase());
+
+        controlPeso = new float[10];
+        cantidadPesos = 0;
+
+        System.out.println("Nueva mascota registrada correctamente.");
 
     }
 
     public void registrarControl(Scanner scanner){
 
+        System.out.println("=== Registrar control ===");
+        System.out.println();
         System.out.print("Ingrese el peso de la mascota: ");
         float peso = scanner.nextFloat();
 
@@ -29,8 +52,9 @@ public class Mascota {
     }
 
     public void consultarHistorial(){
-        System.out.println("Historial de consultas: ");
-        
+        System.out.println("=== Historial de peso ===");
+        System.out.println();
+                
         if(cantidadPesos == 0){
             System.out.println("No hay controles registrados.");
         } else {
@@ -41,6 +65,9 @@ public class Mascota {
     }
 
     public void consultarControl(Scanner scanner){
+
+        System.out.println("=== Consultar control ===");
+        System.out.println();
 
         System.out.print("Ingrese el numero de consulta: ");
         int consulta = scanner.nextInt();
@@ -53,6 +80,9 @@ public class Mascota {
     }
 
     public void modificarPeso(Scanner scanner){
+
+        System.out.println("=== Modificar control ===");
+        System.out.println();
 
         System.out.print("Ingrese el numero de control: ");
         int control = scanner.nextInt();
@@ -74,24 +104,49 @@ public class Mascota {
 
     public void calcularPromedio(){
 
-        double suma = 0;
+        System.out.println("=== Calcular promedio ===");
+        System.out.println();
+        float suma = 0;
         for (int i = 0; i < cantidadPesos; i++){
             suma += controlPeso[i];
         }
-        double promedio = suma /cantidadPesos;
+        float promedio = suma /cantidadPesos;
 
         System.out.println("El promedio de los pesos actuales es de: "+ promedio+"kg");
     }
 
     public void mayorMenor(){
 
+        System.out.println("=== Peso mayor y menor registrados ===");
+        System.out.println();
+
+        float mayor = controlPeso[0];
+        float menor = controlPeso[0];
+
+        if (cantidadPesos == 0){
+            System.out.println("No hay registros");
+            return;
+        }
+
+        for (int i = 0; i < cantidadPesos; i++){
+            
+            if (controlPeso[i] > mayor){
+                mayor = controlPeso[i];
+            }
+            if (controlPeso[i] < menor){
+                menor =controlPeso[i];
+            }
+        }
+        System.out.println("El mayor peso registrado es: "+mayor);
+        System.out.println("El menor peso registrado es: "+menor);
+
     }
     public void controlesDisponibles(){
+        System.out.println("=== Controles disponibles ===");
 
-    }
-    public void salir(){
+        int disponibles = controlPeso.length - cantidadPesos;
 
-    }
+        System.out.println("Existen "+ disponibles+ " controles vacíos");
 
-    
+    }  
 }
