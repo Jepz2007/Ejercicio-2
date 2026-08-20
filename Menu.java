@@ -3,7 +3,9 @@ public class Menu {
     public static void menu( Mascota mascotaActual){
 
         Scanner scanner = new Scanner(System.in);
+        int opcion;
 
+        do{
         System.out.println("1: Crear nueva mascota");
         System.out.println("2: Registrar nuevo control de peso");
         System.out.println("3: Consultar historial de peso");
@@ -15,22 +17,26 @@ public class Menu {
         System.out.println("9: Salir");
         
         System.out.println("¿Qué desea realizar?");
-        int opcion = scanner.nextInt();
+        opcion = scanner.nextInt();
+
+         if (opcion < 1 || opcion > 9) {
+            System.out.println("Opción inválida. Elija del 1 al 9.");
+        } else {
 
         switch (opcion){
             case 1:
-        // 
+                break;
             case 2:
-                mascotaActual.registrarControl();
+                mascotaActual.registrarControl(scanner);
                 break;
             case 3:
                 mascotaActual.consultarHistorial();
                 break;
             case 4:
-                mascotaActual.consultarControl();
+                mascotaActual.consultarControl(scanner);
                 break;
             case 5:
-                mascotaActual.modificarPeso();
+                mascotaActual.modificarPeso(scanner);
                 break;
             case 6:
                 mascotaActual.calcularPromedio();
@@ -45,6 +51,9 @@ public class Menu {
                 System.out.println("Regrese pronto");
                 break;
         }
+    }
+
+    }while (opcion != 9);
 
     }
 }

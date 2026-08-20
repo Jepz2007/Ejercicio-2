@@ -13,13 +13,13 @@ public class Mascota {
         this.especie = especie;
         this.edad = edad;
     }
+    // Métodos 
 
     public void nuevaMascota(){
 
     }
-    public void registrarControl(){
 
-        Scanner scanner = new Scanner(System.in);
+    public void registrarControl(Scanner scanner){
 
         System.out.print("Ingrese el peso de la mascota: ");
         float peso = scanner.nextFloat();
@@ -27,6 +27,7 @@ public class Mascota {
         controlPeso[cantidadPesos] = peso;
         cantidadPesos++;
     }
+
     public void consultarHistorial(){
         System.out.println("Historial de consultas: ");
         
@@ -36,13 +37,10 @@ public class Mascota {
             for(int i = 0; i < cantidadPesos; i++){
                 System.out.println("Consulta " + (i + 1) + ": " + controlPeso[i] + " kg");
             }
-        }
-            
+        }         
     }
 
-    public void consultarControl(){
-
-        Scanner scanner = new Scanner(System.in);
+    public void consultarControl(Scanner scanner){
 
         System.out.print("Ingrese el numero de consulta: ");
         int consulta = scanner.nextInt();
@@ -52,11 +50,9 @@ public class Mascota {
         } else {
             System.out.println("La consulta no existe.");
         }
-
     }
-    public void modificarPeso(){
 
-        Scanner scanner = new Scanner(System.in);
+    public void modificarPeso(Scanner scanner){
 
         System.out.print("Ingrese el numero de control: ");
         int control = scanner.nextInt();
@@ -75,9 +71,18 @@ public class Mascota {
             System.out.println("El control no existe.");
         }
     }
+
     public void calcularPromedio(){
 
+        double suma = 0;
+        for (int i = 0; i < cantidadPesos; i++){
+            suma += controlPeso[i];
+        }
+        double promedio = suma /cantidadPesos;
+
+        System.out.println("El promedio de los pesos actuales es de: "+ promedio+"kg");
     }
+
     public void mayorMenor(){
 
     }
