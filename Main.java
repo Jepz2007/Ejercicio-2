@@ -26,5 +26,6 @@ public class Main {
 
         // Registrar peso
         mascotaActual.registrarControl();
+        Menu.menu(mascotaActual);
     }
 }

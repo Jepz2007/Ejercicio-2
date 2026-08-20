@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Mascota {
     public String nombre;
     public Especie especie;
