@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Mascota {
-    public String nombre;
-    public Especie especie;
-    public int edad;
-    public float controlPeso[] = new float[10];
-    public int cantidadPesos = 0;
+    private String nombre;
+    private Especie especie;
+    private int edad;
+    private float controlPeso[] = new float[10];
+    private int cantidadPesos = 0;
 
     // Constructor
     public Mascota(String nombre, Especie especie, int edad){
